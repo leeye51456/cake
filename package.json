@@ -2,14 +2,16 @@
   "name": "cake",
   "version": "0.1.0-dev",
   "private": true,
-  "dependencies": {
+  "devDependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
     "@types/jest": "^27.0.1",
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
-    "@types/react-dom": "^18.0.0",
+    "@types/react-dom": "^18.0.0"
+  },
+  "dependencies": {
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-scripts": "5.0.1",
