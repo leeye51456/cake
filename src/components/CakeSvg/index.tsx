@@ -1,12 +1,11 @@
 import React from 'react'
 
-import Candle from './Candle'
-
 type CakeSvgProps = {
+  children?: React.ReactNode
   className?: string
 }
 
-function CakeSvg({ className }: CakeSvgProps) {
+function CakeSvg({ className, children }: CakeSvgProps) {
   return (
     <svg
       className={className}
@@ -47,9 +46,7 @@ function CakeSvg({ className }: CakeSvgProps) {
         fill="#ea596e"
       />
 
-      <Candle x={71.288} y={38.281} />
-      <Candle x={50} y={47.403} />
-      <Candle x={28.71} y={38.281} />
+      {children}
     </svg>
   )
 }
