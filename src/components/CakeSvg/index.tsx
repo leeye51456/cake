@@ -3,12 +3,18 @@ import React from 'react'
 type CakeSvgProps = {
   children?: React.ReactNode
   className?: string
+  onClick?: (...args: unknown[]) => unknown
 }
 
-function CakeSvg({ className, children }: CakeSvgProps) {
+function CakeSvg({
+  children,
+  className,
+  onClick,
+}: CakeSvgProps) {
   return (
     <svg
       className={className}
+      onClick={onClick}
       viewBox="0 0 100 100"
       xmlns="http://www.w3.org/2000/svg"
     >
