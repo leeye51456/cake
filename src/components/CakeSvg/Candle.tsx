@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import React from 'react'
 
 import styles from './Candle.module.css'
@@ -29,7 +30,7 @@ function Candle({
         style={bodyStyle}
       />
       <path
-        className={on ? undefined : styles.flameOff}
+        className={classNames(styles.flame, on || styles['flame--off'])}
         d="M7.501,18.241c-3.228,-0 -5.767,-1.478 -6.792,-3.953c-0.892,-2.147 -1.331,-6.805 5.717,-13.85c0.594,-0.594 1.555,-0.594 2.15,0c7.047,7.047 6.605,11.703 5.716,13.85c-1.025,2.475 -3.564,3.953 -6.791,3.953Z"
         style={flameStyle}
       />
