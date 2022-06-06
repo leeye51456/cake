@@ -11,6 +11,16 @@ class RmsQueue {
     this.sum = 0
   }
 
+  get average(): number {
+    const size = this.queue.size
+
+    if (size === 0) {
+      return NaN
+    }
+
+    return this.sum / size
+  }
+
   push(value: number): void {
     this.queue.pushAfterTail(value)
     this.sum += value
@@ -26,16 +36,6 @@ class RmsQueue {
     this.sum -= popped
 
     return popped
-  }
-
-  getAverage(): number {
-    const size = this.queue.size
-
-    if (size === 0) {
-      return NaN
-    }
-
-    return this.sum / size
   }
 }
 
