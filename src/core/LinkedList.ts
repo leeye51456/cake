@@ -30,7 +30,12 @@ class LinkedList<T> {
       this.head.prev = newHead
     }
 
+    if (!this.tail) {
+      this.tail = newHead
+    }
+
     this.head = newHead
+    this.length += 1
   }
 
   pushAfterTail(value: T): void {
@@ -44,24 +49,43 @@ class LinkedList<T> {
       this.tail.next = newTail
     }
 
+    if (!this.head) {
+      this.head = newTail
+    }
+
     this.tail = newTail
+    this.length += 1
   }
 
   popHead(): T {
-    const value = this.head?.value
-    if (typeof value === 'undefined') {
+    if (!this.head) {
       throw new RangeError('LinkedList is empty')
     }
 
+    const value = this.head.value
+
+    if (this.head.next) {
+      this.head.next.prev = null
+    }
+    this.head = this.head.next
+
+    this.length -= 1
     return value
   }
 
   popTail(): T {
-    const value = this.tail?.value
-    if (typeof value === 'undefined') {
+    if (!this.tail) {
       throw new RangeError('LinkedList is empty')
     }
 
+    const value = this.tail.value
+
+    if (this.tail.prev) {
+      this.tail.prev.next = null
+    }
+    this.tail = this.tail.prev
+
+    this.length -= 1
     return value
   }
 }
