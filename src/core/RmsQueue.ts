@@ -26,8 +26,7 @@ class RmsQueue {
     this.sum += value
 
     if (this.queue.size > this.capacity) {
-      const popped = this.pop()
-      this.sum -= popped
+      this.pop()
     }
   }
 
